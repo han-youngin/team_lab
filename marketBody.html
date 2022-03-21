@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    
+     *{
+        margin: 0;
+    }
+        .market_outer{   
+           display: flex;
+           align-items: center;
+           justify-content: space-around;
+           height: auto;
+        }
+/*상점 페이지 왼쪽 시작*/
+            .market_left{
+                margin-top: 150px;
+                margin-bottom: 150px;
+                width: 70%;
+                display: flex;
+                justify-content: center;
+                
+            }
+        .random_outer{
+            height: 70%;
+            width: 65%;
+        }
+
+        
+        .random_title{
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+           
+            .random_txt{
+            font-size: 25px;
+                font-weight: 500;
+            }
+          
+      .random_box{
+                background-color: gold;
+                height: 400px;
+              
+            }
+            .random_img{
+                font-size: 200px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .random_mine{
+               display: flex;
+               justify-content: center;
+            }
+
+            .mine_btn{
+                font-size: 30px;
+                height: 90px;
+                width: 180px;
+            }
+            /*상점 페이지 왼쪽 끝*/
+
+            /*상점 페이지 오른쪽 시작*/
+            .market_right{
+            width: 35%;
+    
+        }
+        .weapon_title{
+            margin-left: 20px;
+        }
+
+            .weapon_outer{
+                height: 100%;
+                width: 70%;
+            }
+          
+            .weapon_name{       
+                font-size: 30px;
+                font-weight: 600;   
+            }
+
+            .weapon_percent{
+                font-size: 13px;
+                list-style:none;
+                margin-bottom: 15px;
+            }
+            /*상점 페이지 오른쪽 끝*/
+    </style>
+</head>
+<body>
+    
+    <div class="market_outer">
+        <div class="market_left">
+        <!--랜덤박스 시작-->
+        <div class="random_outer">
+            <div class="random_title">
+                <div class="random_txt"> 무기(뽑아보쉴???) 1000코인</div>
+            </div>
+            <div class="random_box">
+                <div class="random_img">❓</div> 
+                <div class="random_mine"><button type="button" class="mine_btn">채굴</button></div>
+            </div>
+        </div>
+        <!--랜덤박스 끝-->
+    </div>
+    <div class="market_right">
+        <!--무기목록 시작-->
+        <h1 class="weapon_title">무기 목록</h1>
+
+        <ul>
+            <li class="weapon_name">꽝</li>
+            <li class="weapon_percent">- 확률: 50%</li>
+            <li class="weapon_name">무기1: html</li>
+            <li class="weapon_percent">-확률:25%</li>
+            <li class="weapon_name">무기2: java</li>
+            <li class="weapon_percent">-확률:15%</li>
+            <li class="weapon_name">무기3: JSP</li>
+            <li class="weapon_percent">-확률:8%</li>
+            <li class="weapon_name">무기4: Spring Boot</li>
+            <li class="weapon_percent">-확률:2%</li>
+
+        </ul>
+<!--무기목록 끝-->
+    </div>
+
+    <script>
+         const button = document.getElementById("mine_btn");
+        btn.addEventListener(MouseEvent.CLICK, mine_btn);
+
+        function weaponMine(e){
+ if(Math.random()<0.5){
+  alert("꽝");
+ }else if(Math.random()<0.25){
+  alert("html");
+ }else if(Math.random()<0.15){
+    alert("java");
+ }else if(Math.random()<0.08){
+    alert("JSP");
+ }else{
+    alert("SpringBoot");
+ }
+}
+    </script>
+
+</body>
+
+</html>
