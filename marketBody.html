@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
     
      *{
@@ -99,8 +100,11 @@
                 <div class="random_txt"> 무기(뽑아보쉴???) 1000코인</div>
             </div>
             <div class="random_box">
-                <div class="random_img">❓</div> 
-                <div class="random_mine"><button type="button" class="mine_btn">채굴</button></div>
+                <div id="random_img" style="font-size: 200px;
+                display: flex;
+                justify-content: center;"
+                onclick="random">❓</div> 
+                <div class="random_mine"><button class="mine_btn">채굴</button></div>
             </div>
         </div>
         <!--랜덤박스 끝-->
@@ -126,10 +130,26 @@
     </div>
 
     <script>
-         const button = document.getElementById("mine_btn");
-        btn.addEventListener(MouseEvent.CLICK, mine_btn);
+       $("#random_img").click(()=>{
+    test();
+});
+function test(){
+    let random = Math.random();
+    console.log(random); // 그냥 랜덤 메서드 돌릴 때 어떤 수가 나오는 지 확인
 
-        function weaponMine(e){
+    let randoming = random <= 0.5;
+    console.log(randoming); // 비교할 때 어떤 값이 나오는 지 확인
+
+    let html = 0.25; 
+    let java = 0.15;
+    let JSP = 0.08;
+
+    let result = random <= html; 
+    console.log(result);
+}
+
+
+/*function weaponMine(e){
  if(Math.random()<0.5){
   alert("꽝");
  }else if(Math.random()<0.25){
@@ -140,8 +160,9 @@
     alert("JSP");
  }else{
     alert("SpringBoot");
- }
-}
+ }*/
+
+
     </script>
 
 </body>
