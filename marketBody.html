@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+ 
+</head>
     <style>
     
      *{
@@ -51,7 +60,7 @@
                 justify-content: center;
             }
 
-            .random_mine{
+            .mine_box{
                display: flex;
                justify-content: center;
             }
@@ -103,8 +112,12 @@
                 <div id="random_img" style="font-size: 200px;
                 display: flex;
                 justify-content: center;"
-                onclick="random">❓</div> 
-                <div class="random_mine"><button class="mine_btn">채굴</button></div>
+                onclick="test">❓</div> 
+                <div class="mine_box">
+                <button id="mine_btn " style=" font-size: 30px;
+                    height: 90px;
+                    width: 180px;" onclick="mine">채굴</button>
+                    </div>
             </div>
         </div>
         <!--랜덤박스 끝-->
@@ -137,33 +150,36 @@ function test(){
     let random = Math.random();
     console.log(random); // 그냥 랜덤 메서드 돌릴 때 어떤 수가 나오는 지 확인
 
-    let randoming = random <= 0.5;
-    console.log(randoming); // 비교할 때 어떤 값이 나오는 지 확인
 
-    let html = 0.25; 
-    let java = 0.15;
-    let JSP = 0.08;
+    let 꽝 = random >= 0.5 && random< 1.0; 
+    console.log(꽝);
+    let html = random >= 0.25 && random<0.5 ; 
+    console.log(html);
+    let java = random >= 0.1 && random<0.25; 
+    console.log(java);
+    let JSP = random >= 0.02&& random<0.1; 
+    console.log(JSP);
+    let SpringBoot = random >= 0 && random<0.02; 
+    console.log(SpringBoot);
 
-    let result = random <= html; 
-    console.log(result);
+    if(꽝 == true){
+        alert("꽝");
+    }else if(html == true){
+        alert("html");
+    }else if(java ==true){
+        alert("java");
+    }else if(JSP ==true){
+        alert("JSP");
+    }else if(SpringBoot ==true){
+        alert("SpringBoot");
+    }
+
 }
+</script>
 
 
-/*function weaponMine(e){
- if(Math.random()<0.5){
-  alert("꽝");
- }else if(Math.random()<0.25){
-  alert("html");
- }else if(Math.random()<0.15){
-    alert("java");
- }else if(Math.random()<0.08){
-    alert("JSP");
- }else{
-    alert("SpringBoot");
- }*/
 
 
-    </script>
 
 </body>
 
