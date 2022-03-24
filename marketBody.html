@@ -116,7 +116,7 @@
                 <div class="mine_box">
                 <button id="mine_btn " style=" font-size: 30px;
                     height: 90px;
-                    width: 180px;" onclick="mine">채굴</button>
+                    width: 180px;" type="button" onclick="mine">채굴</button>
                     </div>
             </div>
         </div>
@@ -177,7 +177,15 @@ function test(){
 }
 </script>
 
+<script>
+$("#mine_btn").click(()=>{
+    mine();
+});
 
+function mine(){
+    alert("코인채굴");
+}
+</script>
 
 
 
