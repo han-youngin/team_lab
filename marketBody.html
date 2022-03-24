@@ -114,9 +114,11 @@
                 justify-content: center;"
                 onclick="test">❓</div> 
                 <div class="mine_box">
-                <button id="mine_btn " style=" font-size: 30px;
+                <input id="mine_btn" disabled
+                value="채굴"
+                 style=" font-size: 30px;
                     height: 90px;
-                    width: 180px;" type="button" onclick="mine">채굴</button>
+                    width: 180px;" type="button" onClick='mine()'></input>
                     </div>
             </div>
         </div>
@@ -178,12 +180,29 @@ function test(){
 </script>
 
 <script>
+function timeOut(){
+setTimeout(() => {
+    const target = document.getElementById('mine_btn');
+    target.disabled = false;
+
+}, 5000);
+}
+
+timeOut();
+
+
 $("#mine_btn").click(()=>{
     mine();
+    timeOut();
 });
 
+
+
 function mine(){
+    
     alert("코인채굴");
+    const target = document.getElementById('mine_btn');
+    target.disabled = true;
 }
 </script>
 
