@@ -1,4 +1,4 @@
-package site.metacoding.game.user;
+package site.metacoding.game.domain.user;
 
 import java.time.LocalDateTime;
 
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-public class User {
+public class User1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
