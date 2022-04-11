@@ -41,6 +41,6 @@ public class Rpg {
 
     @JoinColumn(name = "userId")
     @OneToOne(fetch = FetchType.LAZY)
-    private User1 userId;
+    private User1 user;
 
 }

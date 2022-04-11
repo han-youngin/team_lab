@@ -14,7 +14,7 @@ public class MonsterService {
     private final MonsterRepository monsterRepository;
 
     public List<Monster> 몬스터상태() {
-        List<Monster> mstate = monsterRepository.mState();
+        List<Monster> mstate = monsterRepository.findAll();
         System.out.println(mstate);
         return mstate;
     }

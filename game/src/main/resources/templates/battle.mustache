@@ -54,33 +54,45 @@
   <tbody>
     {{#rlist}}
     <tr>
-        <th>{{id}}</th>
+        <th id="id">{{id}}</th>
       <th>{{atk}}</th>
       <th>{{maxHp}}</th>
     <th id="hp">{{hp}}</th>
-    <th>{{userId.nickname}}</th>
+    <th>{{user.nickname}}</th>
+   
       
     </tr>
     {{/rlist}}
   </tbody>
   </table>
-
-  
-    <button id="btn-hp" type="button" class="btn btn-outline-success">hp 소모</button>
  
-<script>
-$("#btn-hp").click(() => {
-    $("#hp").text(0)
-    setTimeout(()=>{
-        alert("1초지남");
-    }, 1000);
-});
+  <button id="btn-hp" type="button" class="btn btn-outline-success">hp 소모</button>
+  <script>
+    $("#btn-hp").click(() => {
+        $("#hp").text(0)
+        setTimeout(()=>{
+            alert("1초지남");
+        }, 1000);
+    });
+    async function update(){
+      let id = $("#id").val();
+      let response = await fetch(`/battle/update/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(object),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      let responseParse = await response.json();
+      let object = {
+        hp:  $("#hp").val() = 0,
+      }
+      $("#hp").val(responseParse.data.hp);
+    }
+    </script>
 
-async function update(){
-  let hp = $("#hp").val();
-  let response = await fetch('/s/')
-}
-</script>
- 
+
+
+
 </body>
 </html>

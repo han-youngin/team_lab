@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.game.domain.rpg.Rpg;
@@ -18,6 +19,11 @@ public class RpgService {
         List<Rpg> rstate = rpgRepository.findAll();
         System.out.println(rstate);
         return rstate;
+    }
+
+    @Transactional
+    public void 업데이트(Rpg rpg) {
+        rpgRepository.save(rpg);
     }
 
 }
