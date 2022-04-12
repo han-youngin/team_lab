@@ -65,6 +65,7 @@
     {{/rlist}}
   </tbody>
   </table>
+  
  
   <button id="btn-hp" type="button" class="btn btn-outline-success">hp 소모</button>
   <script>
@@ -73,9 +74,14 @@
         setTimeout(()=>{
             alert("1초지남");
         }, 1000);
+        update();
     });
     async function update(){
-      let id = $("#id").val();
+      let id = $("#id").text();
+      console.log(id); 
+      let object = {
+        hp:  $("#hp").text(),
+      }
       let response = await fetch(`/battle/update/${id}`, {
         method: "PUT",
         body: JSON.stringify(object),
@@ -84,10 +90,7 @@
         },
       });
       let responseParse = await response.json();
-      let object = {
-        hp:  $("#hp").val() = 0,
-      }
-      $("#hp").val(responseParse.data.hp);
+     
     }
     </script>
 

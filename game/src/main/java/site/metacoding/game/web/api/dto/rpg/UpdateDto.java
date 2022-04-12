@@ -9,14 +9,6 @@ import site.metacoding.game.domain.rpg.Rpg;
 @NoArgsConstructor
 @Data
 public class UpdateDto {
-
-    private Integer atk;
     private Integer hp;
 
-    public Rpg toEntity() { // 외부에서 받은 파일명 set해서 DB 저장하기
-        Rpg rpgUp = new Rpg();
-        rpgUp.setHp(hp);
-
-        return rpgUp;
-    }
 }

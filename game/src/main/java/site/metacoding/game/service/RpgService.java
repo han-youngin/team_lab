@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.game.domain.rpg.Rpg;
 import site.metacoding.game.domain.rpg.RpgRepository;
+import site.metacoding.game.web.api.dto.rpg.UpdateDto;
 
 @RequiredArgsConstructor
 @Service
@@ -22,8 +23,14 @@ public class RpgService {
     }
 
     @Transactional
-    public void 업데이트(Rpg rpg) {
-        rpgRepository.save(rpg);
+    public Rpg 업데이트(Integer id, UpdateDto updateDto) {
+        Optional<Rpg> rpgOp = rpgRepository.findById(id);
+        if (rpgOp.isPresent()) {
+            Rpg rpgEntity = rpgOp.get();
+            rpgEntity.setHp(updateDto.getHp());
+            return rpgEntity;
+        }
+        throw new RuntimeException("유저를 찾지 못함.");
     }
 
 }
